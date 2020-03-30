@@ -51,7 +51,7 @@ while ($show = $series->fetch()){
     echo $show['title'].'</td>';
     echo "<td >". $show['rating']."</td>";
     echo "</tr>";
-    }
+}
  
 
 ?>
@@ -70,11 +70,11 @@ while ($show = $series->fetch()){
 
             $movies = $pdo->query('SELECT title,duur FROM movies');
             echo "<h1>Movies</h1>";
-            while ($show = $movies->fetch()){
+        while ($show = $movies->fetch()){
                 echo "<tr>";
                 echo "<td>".$show['title'].'</td><td>'. $show['duur'];"</td>";
                 echo "</tr>";
-                }
+            }
         ?>
 
 
