@@ -9,10 +9,8 @@ $password = "";
 
 try {
     $pdo = new PDO("mysql:host=$servername;dbname=netland", $username, $password);
-    
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Connected successfully";
-  
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
@@ -45,11 +43,10 @@ try {
 $series = $pdo->query('SELECT title,rating FROM series');
 echo "<h1>Series</h1>";
 
-while ($show = $series->fetch()){
-    
+while ($show = $series->fetch()) {
     echo "<tr><td>";
-    echo $show['title'].'</td>';
-    echo "<td >". $show['rating']."</td>";
+    echo $show['title'] . '</td>';
+    echo "<td >" . $show['rating'] . "</td>";
     echo "</tr>";
 }
  
@@ -72,7 +69,8 @@ while ($show = $series->fetch()){
             echo "<h1>Movies</h1>";
         while ($show = $movies->fetch()){
                 echo "<tr>";
-                echo "<td>".$show['title'].'</td><td>'. $show['duur'];"</td>";
+                echo "<td>" . $show['title'] . '</td>';
+                echo '<td>' . $show['duur']; "</td>";
                 echo "</tr>";
             }
         ?>
