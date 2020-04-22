@@ -5,8 +5,6 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 
-
-
 try {
     $pdo = new PDO("mysql:host=$servername;dbname=netland", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -33,11 +31,11 @@ try {
 
 
 
-    <h1>Welkom op het netland beheerderspaneel</h1>
-  <table style="width:200px">
-    <tr><th>Series</th>
-    <th>Rating</th>
-    <td style="text-align:center"></td></tr>
+<h1>Welkom op het netland beheerderspaneel</h1>
+<table style="width:200px">
+<tr><th>Series</th>
+<th>Rating</th>
+<td style="text-align:center"></td></tr>
 <?php
 
 $series = $pdo->query('SELECT title,rating FROM series');
@@ -59,21 +57,21 @@ while ($show = $series->fetch()) {
 
 <table style="width:200px">
 <tr><th>Movies</th>
-    <th>Duur</th>
-    <td style="text-align:center"></td></tr>
+<th>Duur</th>
+<td style="text-align:center"></td></tr>
 
-        <?php
+<?php
 
 
-            $movies = $pdo->query('SELECT title,duur FROM movies');
-            echo "<h1>Movies</h1>";
-        while ($show = $movies->fetch()){
-                echo "<tr>";
-                echo "<td>" . $show['title'] . '</td>';
-                echo '<td>' . $show['duur']; "</td>";
-                echo "</tr>";
-            }
-        ?>
+$movies = $pdo->query('SELECT title,duur FROM movies');
+echo "<h1>Movies</h1>";
+while ($show = $movies->fetch()){
+    echo "<tr>";
+    echo "<td>" . $show['title'] . '</td>';
+    echo '<td>' . $show['duur']; "</td>";
+    echo "</tr>";
+}
+?>
 
 
 
